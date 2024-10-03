@@ -15,7 +15,6 @@ var doCmd = &cobra.Command{
 Syntax: todo do <title> <task number>`,
   Args: cobra.MatchAll(cobra.ExactArgs(2), cobra.OnlyValidArgs),
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("do called")
     pos, err := strconv.ParseInt(args[1], 10, 64)
     if err != nil {
       panic(err)
@@ -64,5 +63,4 @@ func processDo(title string, pos int) {
   if err != nil {
     panic(err)
   }
-  fmt.Println("Done")
 }
