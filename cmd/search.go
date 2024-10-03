@@ -8,7 +8,7 @@ import (
 
 var searchCmd = &cobra.Command{
 	Use:   "search",
-	Short: "Search for a todo or task",
+	Short: "Search for a todo list or a task",
 	Long: ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("search called")
