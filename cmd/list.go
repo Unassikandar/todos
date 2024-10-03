@@ -15,7 +15,7 @@ type Todo struct {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "A brief description of your command",
+	Short: "List all available todo lists",
 	Long: ``,
 	Run: func(cmd *cobra.Command, args []string) {
 	  listTodos()
