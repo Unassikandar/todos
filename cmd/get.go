@@ -26,7 +26,7 @@ func init() {
 
 var (
     reset = "\033[0m" 
-    orange = "\033[38;5;208m"
+    orange = "\033[38;5;14m"
     red = "\033[38;5;196m"
     green = "\033[38;5;120m"
     strike = "\033[9m"

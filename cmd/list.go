@@ -41,12 +41,11 @@ func listTodos() {
     list = append(list, Todo{id, title})
   }
 
-  tableData := pterm.TableData{}
-  tableData = append(tableData, []string{"INDEX", "TITLE", "TAGS"})
+  tableData := pterm.TableData{[]string{"index", "title", "tags"}}
   for i := range len(list) {
     item := list[i]
     tableData = append(tableData, []string{strconv.Itoa(item.id), item.title})
   }
-  pterm.DefaultArea.WithCenter().Start()
+  // pterm.DefaultArea.WithCenter().Start()
   pterm.DefaultTable.WithHasHeader().WithBoxed().WithData(tableData).Render()
 }

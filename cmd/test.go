@@ -15,7 +15,7 @@ var testCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("test called")
     database := util.OpenDB()
-    rows, err := database.Query("SELECT * from task")
+    rows, err := database.Query("SELECT id, todo_id, task, is_done FROM task WHERE todo_id = 2 LIMIT 1 OFFSET 2")
     if err != nil {
       panic(err)
     }
@@ -24,10 +24,11 @@ var testCmd = &cobra.Command{
       id int
       todoId int
       content string
+      isDone int
     )
     for rows.Next() {
-      rows.Scan(&id, &todoId, &content)
-      fmt.Printf("ID: %d, TODO ID: %d, CONTENT: %s\n", id, todoId, content)
+      rows.Scan(&id, &todoId, &content, &isDone)
+      fmt.Printf("ID: %d, TODO ID: %d, CONTENT: %s, IS_DONE: %d\n", id, todoId, content, isDone)
     }
 	},
 }
