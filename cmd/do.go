@@ -10,7 +10,7 @@ import (
 
 var doCmd = &cobra.Command{
 	Use:   "do",
-	Short: "A brief description of your command",
+	Short: "Mark a task as completed",
   Long: `Marks a task as completed. 
 Syntax: todo do <title> <task number>`,
   Args: cobra.MatchAll(cobra.ExactArgs(2), cobra.OnlyValidArgs),
