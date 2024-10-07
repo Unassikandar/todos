@@ -9,7 +9,7 @@ import (
 
 var testCmd = &cobra.Command{
 	Use:   "test",
-	Short: "A brief description of your command",
+	Short: "for testing purposes, ignore.",
 	Long: ``,
   // Args: cobra.ExactValidArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {

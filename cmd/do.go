@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"strconv"
 	"todos/util"
 
@@ -10,12 +9,11 @@ import (
 
 var doCmd = &cobra.Command{
 	Use:   "do",
-	Short: "A brief description of your command",
+	Short: "Mark a task as completed",
   Long: `Marks a task as completed. 
 Syntax: todo do <title> <task number>`,
   Args: cobra.MatchAll(cobra.ExactArgs(2), cobra.OnlyValidArgs),
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("do called")
     pos, err := strconv.ParseInt(args[1], 10, 64)
     if err != nil {
       panic(err)
@@ -64,5 +62,4 @@ func processDo(title string, pos int) {
   if err != nil {
     panic(err)
   }
-  fmt.Println("Done")
 }

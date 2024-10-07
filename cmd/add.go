@@ -10,8 +10,8 @@ import (
 
 var addCmd = &cobra.Command{
 	Use:   "add",
-  Short: "Add a task to a todo list. Args: <todoId>, <task>",
-	Long: ``,
+  Short: "Add a task to an existing todo list.",
+	Long: `Args: <todoId>, <task>`,
   Args: cobra.MatchAll(cobra.ExactArgs(2), cobra.OnlyValidArgs),
 	Run: func(cmd *cobra.Command, args []string) {
     todoId, err := strconv.ParseInt(args[0], 10, 64)
