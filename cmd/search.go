@@ -60,11 +60,9 @@ func getAllTasks() []Task {
     rows.Scan(&todoTitle, &task)
     task := Task{Title: todoTitle, Task: task}
     tasks = append(tasks, task)
-    // fmt.Printf("%s: %s\n", todoTitle, task)
   }
   rows.Close()
   database.Ping()
-  // fmt.Println("\033[38;5;14mFetch completed\n\n\033[0m")
 
   return tasks
 }
@@ -80,21 +78,3 @@ func fuzzySearch(search string, tasks []Task) []Task {
   }
   return matchingTasks
 }
-
-// implement a fuzzy search function that takes an array of strings and a search string as arguments
-// and returns an array of strings that match the search string
-// use Levenshtein distance to calculate the similarity between the search string and the strings in the array
-// if the distance is less than 3, consider the string a match
-// return an array of matching strings
-// func fuzzySearch(search string, tasks []Task) []Task {
-//   var matchingTasks []Task
-//   for _, task := range tasks {
-//     if levenshtein(search, task.Task) < 3 {
-//       matchingTasks = append(matchingTasks, task)
-//     } else if levenshtein(search, task.Title) < 3 {
-//       matchingTasks = append(matchingTasks, task)
-//     }
-//   }
-//   return matchingTasks
-// }
-
